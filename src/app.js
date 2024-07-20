@@ -1,11 +1,19 @@
 /* eslint-disable */
-import "bootstrap";
 import "./style.css";
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
-
-window.onload = function() {
+window.onload = () => {
   //write your code here
-  console.log("Hello Rigo from the console!");
+  document.querySelector("#excusa").innerHTML = crearExcusas();
+};
+
+let crearExcusas = () => {
+  let quien = ["Mi gato", "Mi perro", "Mi amigo", "Mi hermano"];
+  let que = ["se accidentó", "se quebró", "se rompió el craneo", "se murió"];
+  let cuando = ["antes de salir", "ayer", "hoy", "cuando venía para aquí"];
+
+  let IDquien = Math.floor(Math.random() * quien.length);
+  let IDque = Math.floor(Math.random() * que.length);
+  let IDcuando = Math.floor(Math.random() * cuando.length);
+
+  return quien[IDquien] + " " + que[IDque] + " " + cuando[IDcuando];
 };
